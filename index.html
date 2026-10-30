@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional IT Support services in Varna, Bulgaria - PC repair, OS installation, upgrades, LAN & NAS setup">
-    <title>IT Support Varna | PC Repair & Network Services</title>
+    <meta name="description" content="IT поддръжка във Варна — диагностика и ремонт на компютри, инсталиране на Windows, профилактика, ъпгрейди, LAN и NAS.">
+    <title>IT Поддръжка Варна | Ремонт на компютри и мрежи</title>
     <style>
         :root {
             --bg: #060a12;
@@ -87,7 +87,6 @@
             -webkit-mask-image: radial-gradient(ellipse 85% 62% at 50% 0%, #000 30%, transparent 80%);
         }
 
-        /* soft diagonal light beams — angular counterpoint to the grid */
         .beam {
             position: absolute;
             height: 200px;
@@ -179,7 +178,7 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 1.75rem;
+            gap: 1.5rem;
         }
         .nav-links a {
             color: var(--text-dim);
@@ -252,9 +251,9 @@
         }
 
         h1 {
-            font-size: clamp(2.4rem, 6.6vw, 4.9rem);
+            font-size: clamp(2.2rem, 6vw, 4.5rem);
             font-weight: 700;
-            line-height: 1.02;
+            line-height: 1.04;
             letter-spacing: -0.035em;
             text-transform: uppercase;
             margin-bottom: 1.5rem;
@@ -272,7 +271,7 @@
         .hero-sub {
             font-size: clamp(1.0625rem, 2vw, 1.1875rem);
             color: var(--text-dim);
-            max-width: 600px;
+            max-width: 620px;
             margin: 0 auto 2.5rem;
             line-height: 1.7;
         }
@@ -522,6 +521,67 @@
             font-size: 0.9375rem;
             line-height: 1.65;
         }
+        .service-price {
+            margin-top: 1.1rem;
+            padding-top: 0.85rem;
+            border-top: 1px solid var(--border);
+            font-family: var(--mono);
+            font-size: 0.6875rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-faint);
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+        .service-price strong {
+            color: var(--accent-2);
+            font-weight: 600;
+            font-size: 0.875rem;
+            letter-spacing: 0.04em;
+        }
+
+        /* ---------- Price list ---------- */
+        .price-list {
+            padding: 0.4rem 0;
+            overflow: hidden;
+        }
+        .price-list:hover { transform: none; }
+        .price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            padding: 0.95rem 1.4rem;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.2s ease;
+        }
+        .price-row:last-of-type { border-bottom: 0; }
+        .price-row:hover { background: var(--surface); }
+        .price-name {
+            color: var(--text);
+            font-size: 0.9375rem;
+            flex: 0 1 auto;
+        }
+        .price-dots {
+            flex: 1 1 20px;
+            min-width: 12px;
+            border-bottom: 1px dotted rgba(110, 160, 255, 0.25);
+            transform: translateY(-3px);
+        }
+        .price-val {
+            font-family: var(--mono);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--accent-2);
+            white-space: nowrap;
+        }
+        .price-note {
+            padding: 1rem 1.4rem 1.1rem;
+            color: var(--text-faint);
+            font-size: 0.8125rem;
+            line-height: 1.6;
+            border-top: 1px solid var(--border);
+        }
 
         /* ---------- Work / gallery ---------- */
         .gallery-grid {
@@ -721,6 +781,8 @@
             .g-wide { grid-column: span 1; }
             .cta-banner { padding: 2.75rem 1.25rem; }
             .foot-inner { justify-content: center; text-align: center; }
+            .price-row { padding: 0.9rem 1.1rem; }
+            .price-name { font-size: 0.875rem; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -754,55 +816,56 @@
                         <path d="M12 17v4"></path>
                     </svg>
                 </span>
-                IT Support Varna
+                IT Поддръжка Варна
             </a>
             <div class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#work">Work</a>
-                <a href="#process">Process</a>
-                <a href="#contact" class="nav-cta">Contact</a>
+                <a href="#services">Услуги</a>
+                <a href="#prices">Цени</a>
+                <a href="#work">Работа</a>
+                <a href="#process">Процес</a>
+                <a href="#contact" class="nav-cta">Контакти</a>
             </div>
         </div>
     </nav>
 
     <header class="hero">
         <div class="wrap">
-            <span class="eyebrow reveal"><span class="pulse-dot"></span> Varna, Bulgaria &middot; On-site &amp; remote</span>
-            <h1 class="reveal">IT support that<br><span class="gradient-text">just works.</span></h1>
-            <p class="hero-sub reveal">From a slow laptop to a full office network — I diagnose, repair, install and upgrade so you can get on with your day.</p>
+            <span class="eyebrow reveal"><span class="pulse-dot"></span> Варна, България &middot; На място и от разстояние</span>
+            <h1 class="reveal">IT поддръжка,<br><span class="gradient-text">която просто работи.</span></h1>
+            <p class="hero-sub reveal">От бавен лаптоп до цяла офис мрежа — диагностицирам, ремонтирам, инсталирам и надграждам, за да продължите с работата си.</p>
             <div class="hero-actions reveal">
                 <a href="#contact" class="btn btn-primary">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
-                    Call +359 888 123 456
+                    Обади се: +359 888 123 456
                 </a>
-                <a href="#services" class="btn btn-ghost">View services</a>
+                <a href="#services" class="btn btn-ghost">Виж услугите</a>
             </div>
 
             <div class="status-strip reveal">
-                <span>Response &lt; 24h</span>
+                <span>Отговор до 24ч</span>
                 <span class="sep"></span>
-                <span>On-site Varna</span>
+                <span>На място във Варна</span>
                 <span class="sep"></span>
-                <span>Remote support</span>
+                <span>Дистанционна поддръжка</span>
             </div>
 
             <div class="hero-visual reveal">
                 <figure class="photo">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=750&fit=crop" width="600" height="750" loading="lazy" decoding="async" alt="Circuit board close-up">
-                    <figcaption class="photo-label">Diagnostics</figcaption>
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=750&fit=crop" width="600" height="750" loading="lazy" decoding="async" alt="Диагностика на дънна платка">
+                    <figcaption class="photo-label">Диагностика</figcaption>
                 </figure>
                 <figure class="photo">
-                    <img src="https://images.unsplash.com/photo-1593642532400-2682810df593?w=600&h=750&fit=crop" width="600" height="750" loading="lazy" decoding="async" alt="Laptop on desk workspace">
-                    <figcaption class="photo-label">Repairs</figcaption>
+                    <img src="https://images.unsplash.com/photo-1593642532400-2682810df593?w=600&h=750&fit=crop" width="600" height="750" loading="lazy" decoding="async" alt="Ремонт на лаптоп на работна маса">
+                    <figcaption class="photo-label">Ремонт</figcaption>
                 </figure>
                 <figure class="photo">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=750&fit=crop" width="600" height="750" loading="lazy" decoding="async" alt="Network server rack">
-                    <figcaption class="photo-label">Networks</figcaption>
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=750&fit=crop" width="600" height="750" loading="lazy" decoding="async" alt="Сървърна стойка с мрежово оборудване">
+                    <figcaption class="photo-label">Мрежи</figcaption>
                 </figure>
                 <figure class="photo">
-                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=750&fit=crop" width="600" height="750" loading="lazy" decoding="async" alt="Network cables patch panel">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=750&fit=crop" width="600" height="750" loading="lazy" decoding="async" alt="Мрежови кабели и пач панел">
                     <figcaption class="photo-label">LAN &amp; NAS</figcaption>
                 </figure>
             </div>
@@ -814,9 +877,9 @@
         <section id="services">
             <div class="wrap">
                 <div class="sec-head center reveal">
-                    <div class="sec-label">01 / Services</div>
-                    <h2>Everything under one roof</h2>
-                    <p class="sec-desc">Straightforward help for home users and small offices — no jargon, no upsells, just working machines.</p>
+                    <div class="sec-label">01 / Услуги</div>
+                    <h2>Всичко на едно място</h2>
+                    <p class="sec-desc">Практична помощ за дома и малки офиси — без жаргон и без излишни продажби, само работеща техника.</p>
                 </div>
                 <div class="services-grid">
                     <article class="service-card panel reveal">
@@ -828,8 +891,9 @@
                             </div>
                             <span class="svc-num">01</span>
                         </div>
-                        <h3>PC Repair &amp; Diagnostics</h3>
-                        <p>Hardware troubleshooting, component replacement, virus/malware removal and performance tuning for desktops and laptops.</p>
+                        <h3>Диагностика и ремонт</h3>
+                        <p>Откриване на хардуерни и софтуерни проблеми, подмяна на компоненти, премахване на вируси и оптимизация на производителността.</p>
+                        <div class="service-price">от <strong>€15</strong></div>
                     </article>
 
                     <article class="service-card panel reveal">
@@ -841,8 +905,9 @@
                             </div>
                             <span class="svc-num">02</span>
                         </div>
-                        <h3>OS Install &amp; Reinstall</h3>
-                        <p>Clean installation of Windows 10/11 or Linux, driver setup, activation and the essential software you actually use.</p>
+                        <h3>Инсталиране на Windows</h3>
+                        <p>Чиста инсталация на Windows 10/11 или Linux, драйвери, активация и основните програми, които ползвате.</p>
+                        <div class="service-price">от <strong>€29</strong></div>
                     </article>
 
                     <article class="service-card panel reveal">
@@ -854,8 +919,9 @@
                             </div>
                             <span class="svc-num">03</span>
                         </div>
-                        <h3>PC Upgrades</h3>
-                        <p>RAM and SSD upgrades, GPU replacement, power supplies and cooling — spend where it actually makes a difference.</p>
+                        <h3>Профилактика и почистване</h3>
+                        <p>Почистване от прах, смяна на термопаста, проверка на температури и шум при настолни компютри и лаптопи.</p>
+                        <div class="service-price">от <strong>€25</strong></div>
                     </article>
 
                     <article class="service-card panel reveal">
@@ -867,8 +933,9 @@
                             </div>
                             <span class="svc-num">04</span>
                         </div>
-                        <h3>LAN Setup &amp; Configuration</h3>
-                        <p>Structured cabling, switch and router setup, VLANs, Wi-Fi coverage and network troubleshooting for home and office.</p>
+                        <h3>Ъпгрейд и компоненти</h3>
+                        <p>Ъпгрейд на RAM и SSD, смяна на видео карта, захранване и охлаждане — там, където има реален ефект.</p>
+                        <div class="service-price">от <strong>€10</strong></div>
                     </article>
 
                     <article class="service-card panel reveal">
@@ -880,8 +947,9 @@
                             </div>
                             <span class="svc-num">05</span>
                         </div>
-                        <h3>NAS Setup &amp; Configuration</h3>
-                        <p>Synology, QNAP and TrueNAS deployments, RAID configuration, backup strategy and secure remote access.</p>
+                        <h3>LAN мрежа</h3>
+                        <p>Структурно окабеляване, настройка на рутер и суич, VLAN, Wi-Fi покритие и отстраняване на мрежови проблеми.</p>
+                        <div class="service-price">по <strong>договаряне</strong></div>
                     </article>
 
                     <article class="service-card panel reveal">
@@ -893,9 +961,54 @@
                             </div>
                             <span class="svc-num">06</span>
                         </div>
-                        <h3>On-site &amp; Remote Support</h3>
-                        <p>Fast on-site visits across Varna, plus remote assistance when a quick fix saves you a trip.</p>
+                        <h3>NAS и бекъп</h3>
+                        <p>Synology, QNAP и TrueNAS, RAID конфигурация, стратегия за бекъп и сигурен отдалечен достъп.</p>
+                        <div class="service-price">по <strong>договаряне</strong></div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prices -->
+        <section id="prices">
+            <div class="wrap">
+                <div class="sec-head reveal">
+                    <div class="sec-label">02 / Цени</div>
+                    <h2>Ориентировъчни цени</h2>
+                    <p class="sec-desc">Няколко от най-търсените услуги. Крайната цена зависи от модела, състоянието и нужните части.</p>
+                </div>
+                <div class="price-list panel reveal">
+                    <div class="price-row">
+                        <span class="price-name">Диагностика на компютър или лаптоп</span>
+                        <span class="price-dots"></span>
+                        <span class="price-val">€15</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-name">Профилактика на офис компютър</span>
+                        <span class="price-dots"></span>
+                        <span class="price-val">€25</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-name">Профилактика на офис лаптоп</span>
+                        <span class="price-dots"></span>
+                        <span class="price-val">€28</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-name">Инсталиране на Windows + драйвери + програми</span>
+                        <span class="price-dots"></span>
+                        <span class="price-val">€29</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-name">Смяна на матрица на лаптоп</span>
+                        <span class="price-dots"></span>
+                        <span class="price-val">€26</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-name">Смяна на батерия на лаптоп</span>
+                        <span class="price-dots"></span>
+                        <span class="price-val">€16</span>
+                    </div>
+                    <p class="price-note">Не започваме ремонт без потвърждение от клиента. Цените са ориентировъчни и не включват резервни части.</p>
                 </div>
             </div>
         </section>
@@ -904,26 +1017,26 @@
         <section id="work">
             <div class="wrap">
                 <div class="sec-head reveal">
-                    <div class="sec-label">02 / Recent work</div>
-                    <h2>A look behind the desk</h2>
-                    <p class="sec-desc">A few of the setups I have configured, repaired and maintained around Varna.</p>
+                    <div class="sec-label">03 / Работа</div>
+                    <h2>Зад кулисите</h2>
+                    <p class="sec-desc">Няколко от системите, които конфигурирах, ремонтирах и поддържах из Варна.</p>
                 </div>
                 <div class="gallery-grid">
                     <figure class="g-item g-big reveal">
-                        <img src="https://images.unsplash.com/photo-1555617981-dac3880eac6e?w=900&h=700&fit=crop" width="900" height="700" loading="lazy" decoding="async" alt="Synology NAS setup on shelf">
-                        <figcaption class="g-cap"><strong>Home NAS — Synology DS923+</strong><span>4x 8TB RAID 5, backups &amp; remote access</span></figcaption>
+                        <img src="https://images.unsplash.com/photo-1555617981-dac3880eac6e?w=900&h=700&fit=crop" width="900" height="700" loading="lazy" decoding="async" alt="Домашен NAS Synology">
+                        <figcaption class="g-cap"><strong>Домашен NAS — Synology DS923+</strong><span>4x 8TB RAID 5, бекъпи и отдалечен достъп</span></figcaption>
                     </figure>
                     <figure class="g-item reveal">
-                        <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&h=400&fit=crop" width="600" height="400" loading="lazy" decoding="async" alt="Office LAN patch panel">
-                        <figcaption class="g-cap"><strong>Office LAN</strong><span>Cat6 + managed switch</span></figcaption>
+                        <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&h=400&fit=crop" width="600" height="400" loading="lazy" decoding="async" alt="Офис LAN пач панел">
+                        <figcaption class="g-cap"><strong>Офис LAN</strong><span>Cat6 + управляем суич</span></figcaption>
                     </figure>
                     <figure class="g-item reveal">
-                        <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=600&h=400&fit=crop" width="600" height="400" loading="lazy" decoding="async" alt="Gaming PC build">
-                        <figcaption class="g-cap"><strong>Custom build</strong><span>Ryzen + RTX upgrade</span></figcaption>
+                        <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=600&h=400&fit=crop" width="600" height="400" loading="lazy" decoding="async" alt="Сглобена геймърска конфигурация">
+                        <figcaption class="g-cap"><strong>Персонална конфигурация</strong><span>Ъпгрейд Ryzen + RTX</span></figcaption>
                     </figure>
                     <figure class="g-item g-wide reveal">
-                        <img src="https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?w=1200&h=500&fit=crop" width="1200" height="500" loading="lazy" decoding="async" alt="Workstation with dual monitors">
-                        <figcaption class="g-cap"><strong>Creative workstation</strong><span>Windows 11 clean install + drivers</span></figcaption>
+                        <img src="https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?w=1200&h=500&fit=crop" width="1200" height="500" loading="lazy" decoding="async" alt="Работна станция с два монитора">
+                        <figcaption class="g-cap"><strong>Работна станция</strong><span>Чиста инсталация на Windows 11 + драйвери</span></figcaption>
                     </figure>
                 </div>
             </div>
@@ -933,30 +1046,30 @@
         <section id="process">
             <div class="wrap">
                 <div class="sec-head center reveal">
-                    <div class="sec-label">03 / How it works</div>
-                    <h2>Simple process</h2>
-                    <p class="sec-desc">No surprises, no jargon. Four steps and you are back to work.</p>
+                    <div class="sec-label">04 / Как работим</div>
+                    <h2>Прост процес</h2>
+                    <p class="sec-desc">Без изненади и без жаргон. Четири стъпки и сте обратно на работа.</p>
                 </div>
                 <div class="steps">
                     <article class="step panel reveal">
                         <span class="step-num">01</span>
-                        <h3>Contact</h3>
-                        <p>Call or message with a short description of the problem and what hardware you have.</p>
+                        <h3>Контакт</h3>
+                        <p>Обадете се или пишете с кратко описание на проблема и техниката, с която разполагате.</p>
                     </article>
                     <article class="step panel reveal">
                         <span class="step-num">02</span>
-                        <h3>Diagnose</h3>
-                        <p>On-site visit or remote session to identify the root cause before touching anything.</p>
+                        <h3>Диагностика</h3>
+                        <p>Посещение на място или сесия от разстояние, за да открием причината, преди да пипаме каквото и да е.</p>
                     </article>
                     <article class="step panel reveal">
                         <span class="step-num">03</span>
-                        <h3>Fix</h3>
-                        <p>Clear quote up front, then the repair, upgrade, install or configuration carried out properly.</p>
+                        <h3>Ремонт</h3>
+                        <p>Ясна оферта предварително, след което ремонтът, ъпгрейдът или инсталацията се извършват както трябва.</p>
                     </article>
                     <article class="step panel reveal">
                         <span class="step-num">04</span>
-                        <h3>Support</h3>
-                        <p>Handover with everything configured, plus follow-up if anything needs settling in.</p>
+                        <h3>Поддръжка</h3>
+                        <p>Предаване с всичко конфигурирано и последваща помощ, ако нещо трябва да се донастрои.</p>
                     </article>
                 </div>
             </div>
@@ -966,9 +1079,9 @@
         <section id="contact">
             <div class="wrap">
                 <div class="sec-head center reveal">
-                    <div class="sec-label">04 / Contact</div>
-                    <h2>Get in touch</h2>
-                    <p class="sec-desc">Based in Varna, serving the city and surrounding areas. Free consultation on any job.</p>
+                    <div class="sec-label">05 / Контакти</div>
+                    <h2>Свържете се</h2>
+                    <p class="sec-desc">Базирано във Варна, обслужваме града и околностите. Безплатна консултация за всяка задача.</p>
                 </div>
                 <div class="contact-grid">
                     <div class="contact-card panel reveal">
@@ -978,7 +1091,7 @@
                             </svg>
                         </div>
                         <div>
-                            <strong>Phone</strong>
+                            <strong>Телефон</strong>
                             <a href="tel:+359888123456">+359 888 123 456</a>
                         </div>
                     </div>
@@ -991,7 +1104,7 @@
                             </svg>
                         </div>
                         <div>
-                            <strong>Email</strong>
+                            <strong>Имейл</strong>
                             <a href="mailto:support@itsupportvarna.bg">support@itsupportvarna.bg</a>
                         </div>
                     </div>
@@ -1003,8 +1116,8 @@
                             </svg>
                         </div>
                         <div>
-                            <strong>Location</strong>
-                            <span class="txt">Varna, Bulgaria</span>
+                            <strong>Локация</strong>
+                            <span class="txt">Варна, България</span>
                         </div>
                     </div>
                 </div>
@@ -1015,16 +1128,16 @@
         <section class="wrap">
             <div class="cta-outer reveal">
                 <div class="cta-banner">
-                    <h2>Something not working?</h2>
-                    <p>Describe the problem and I will tell you what it takes to fix it — free of charge.</p>
+                    <h2>Нещо не работи?</h2>
+                    <p>Опишете проблема и ще ви кажа какво е нужно, за да го отстраним — безплатно.</p>
                     <div class="hero-actions">
                         <a href="tel:+359888123456" class="btn btn-primary">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                             </svg>
-                            Call now
+                            Обади се
                         </a>
-                        <a href="mailto:support@itsupportvarna.bg" class="btn btn-ghost">Send a message</a>
+                        <a href="mailto:support@itsupportvarna.bg" class="btn btn-ghost">Изпрати съобщение</a>
                     </div>
                 </div>
             </div>
@@ -1039,9 +1152,9 @@
                         <rect x="2" y="3" width="20" height="14" rx="1"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path>
                     </svg>
                 </span>
-                IT Support Varna
+                IT Поддръжка Варна
             </a>
-            <span class="foot-meta">&copy; <span id="year"></span> IT Support Varna &middot; Varna, BG</span>
+            <span class="foot-meta">&copy; <span id="year"></span> IT Поддръжка Варна &middot; Варна, БГ</span>
         </div>
     </footer>
 
