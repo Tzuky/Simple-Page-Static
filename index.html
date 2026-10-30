@@ -908,7 +908,30 @@
     <script>
         // Always start at top on load — stops mobile browsers restoring/keeping a scrolled position
         if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-        if (!location.hash) window.scrollTo(0, 0);
+
+        (function () {
+            var touched = false;
+            ['touchstart', 'pointerdown', 'wheel', 'keydown'].forEach(function (ev) {
+                window.addEventListener(ev, function () { touched = true; }, { passive: true, once: true });
+            });
+            var start = performance.now();
+            function snapTop() {
+                var root = document.documentElement;
+                var prev = root.style.scrollBehavior;
+                root.style.scrollBehavior = 'auto';
+                window.scrollTo(0, 0);
+                root.style.scrollBehavior = prev;
+            }
+            function guard() {
+                if (!touched && window.scrollY > 0 && performance.now() - start < 5000) snapTop();
+            }
+            window.addEventListener('scroll', guard, { passive: true });
+            window.addEventListener('load', guard);
+            var iv = setInterval(function () {
+                guard();
+                if (performance.now() - start > 5200) clearInterval(iv);
+            }, 200);
+        })();
 
         // Year
         document.getElementById('year').textContent = new Date().getFullYear();
