@@ -27,7 +27,14 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html { scroll-behavior: smooth; }
+        html {
+            overflow-x: hidden;
+            overflow-x: clip;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            html { scroll-behavior: smooth; }
+        }
 
         body {
             font-family: var(--font);
@@ -36,11 +43,23 @@
             background: var(--bg);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
+            overflow-x: clip;
+        }
+
+        /* ---------- FX layer: clips decorative elements so they can't overflow ---------- */
+        .fx-layer {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+            overflow: clip;
+            pointer-events: none;
+            transform: translateZ(0);
         }
 
         /* ---------- FX: ambient gradient mesh ---------- */
         .mesh {
-            position: fixed;
+            position: absolute;
             inset: 0;
             z-index: -2;
             background:
@@ -60,7 +79,7 @@
 
         /* ---------- FX: subtle grid ---------- */
         .grid-fx {
-            position: fixed;
+            position: absolute;
             inset: 0;
             z-index: -1;
             background-image:
@@ -73,7 +92,7 @@
 
         /* ---------- FX: floating orbs ---------- */
         .orb {
-            position: fixed;
+            position: absolute;
             border-radius: 50%;
             filter: blur(70px);
             opacity: 0.42;
@@ -587,7 +606,7 @@
             .nav-links a:not(.nav-cta) { display: none; }
         }
         @media (max-width: 560px) {
-            .hero-visual { grid-template-columns: 1fr; }
+            .hero-visual { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
             .gallery-grid { grid-template-columns: 1fr; }
             .g-wide { grid-column: span 1; }
             .cta-banner { padding: 3rem 1.25rem; }
@@ -604,12 +623,14 @@
     </style>
 </head>
 <body>
-    <div class="mesh"></div>
-    <div class="grid-fx"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <div class="grain"></div>
+    <div class="fx-layer" aria-hidden="true">
+        <div class="mesh"></div>
+        <div class="grid-fx"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <div class="grain" aria-hidden="true"></div>
 
     <nav id="nav">
         <div class="wrap nav-inner">
@@ -649,19 +670,19 @@
 
             <div class="hero-visual reveal">
                 <figure class="photo">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=750&fit=crop" alt="Circuit board close-up">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=750&fit=crop" width="600" height="750" loading="lazy" decoding="async" alt="Circuit board close-up">
                     <figcaption class="photo-label">Diagnostics</figcaption>
                 </figure>
                 <figure class="photo">
-                    <img src="https://images.unsplash.com/photo-1593642532400-2682810df593?w=600&h=750&fit=crop" alt="Laptop on desk workspace">
+                    <img src="https://images.unsplash.com/photo-1593642532400-2682810df593?w=600&h=750&fit=crop" width="600" height="750" loading="lazy" decoding="async" alt="Laptop on desk workspace">
                     <figcaption class="photo-label">Repairs</figcaption>
                 </figure>
                 <figure class="photo">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=750&fit=crop" alt="Network server rack">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=750&fit=crop" width="600" height="750" loading="lazy" decoding="async" alt="Network server rack">
                     <figcaption class="photo-label">Networks</figcaption>
                 </figure>
                 <figure class="photo">
-                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=750&fit=crop" alt="Network cables patch panel">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=750&fit=crop" width="600" height="750" loading="lazy" decoding="async" alt="Network cables patch panel">
                     <figcaption class="photo-label">LAN &amp; NAS</figcaption>
                 </figure>
             </div>
@@ -751,19 +772,19 @@
                 </div>
                 <div class="gallery-grid">
                     <figure class="g-item g-big reveal">
-                        <img src="https://images.unsplash.com/photo-1555617981-dac3880eac6e?w=900&h=700&fit=crop" alt="Synology NAS setup on shelf">
+                        <img src="https://images.unsplash.com/photo-1555617981-dac3880eac6e?w=900&h=700&fit=crop" width="900" height="700" loading="lazy" decoding="async" alt="Synology NAS setup on shelf">
                         <figcaption class="g-cap"><strong>Home NAS — Synology DS923+</strong><span>4x 8TB RAID 5, backups &amp; remote access</span></figcaption>
                     </figure>
                     <figure class="g-item reveal">
-                        <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&h=400&fit=crop" alt="Office LAN patch panel">
+                        <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&h=400&fit=crop" width="600" height="400" loading="lazy" decoding="async" alt="Office LAN patch panel">
                         <figcaption class="g-cap"><strong>Office LAN</strong><span>Cat6 + managed switch</span></figcaption>
                     </figure>
                     <figure class="g-item reveal">
-                        <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=600&h=400&fit=crop" alt="Gaming PC build">
+                        <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=600&h=400&fit=crop" width="600" height="400" loading="lazy" decoding="async" alt="Gaming PC build">
                         <figcaption class="g-cap"><strong>Custom build</strong><span>Ryzen + RTX upgrade</span></figcaption>
                     </figure>
                     <figure class="g-item g-wide reveal">
-                        <img src="https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?w=1200&h=500&fit=crop" alt="Workstation with dual monitors">
+                        <img src="https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?w=1200&h=500&fit=crop" width="1200" height="500" loading="lazy" decoding="async" alt="Workstation with dual monitors">
                         <figcaption class="g-cap"><strong>Creative workstation</strong><span>Windows 11 clean install + drivers</span></figcaption>
                     </figure>
                 </div>
@@ -885,6 +906,10 @@
     </footer>
 
     <script>
+        // Always start at top on load — stops mobile browsers restoring/keeping a scrolled position
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+        if (!location.hash) window.scrollTo(0, 0);
+
         // Year
         document.getElementById('year').textContent = new Date().getFullYear();
 
